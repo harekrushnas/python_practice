@@ -25,7 +25,16 @@ for i in range(3):
         break
     else:
         if i == 2:
-            print('Ohh...U missed all the chances....thanks for playing the game... ')
+
+            print('Ohh...U missed all the chances....','\n You Lose the game',
+                  '\n thanks for playing the game... ')
+
+            chk_no=input('Do you want to see the Actual Number ? Y/N :')
+            if chk_no=='Y' or chk_no=='y':
+                print ('The actual no is : ',ran)
+            else:
+                print('Thank u...')
+
         else:
             #print('Ohhh....Your guess is incorrect.......don\'t worry you have ',Fore.RED + 2-i +Style.RESET_ALL , 'chance left')
             print('Ohhh....Your guess is incorrect.......don\'t worry you have ', 2 - i ,'chance left')
