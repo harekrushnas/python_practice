@@ -25,9 +25,18 @@ for i in f1:
 lnth=len(word)-1
 #guess_word=[]
 guess_word=''
+org_word=''
 for i in range(lnth):
     if i%2==0:
-        guess_word+=word[i]+'_'
+        guess_word += word[i]
+        #guess_word+=word[i]+'_'
+    else:
+        guess_word +='_'
+
+
+for i in range(lnth):
+    org_word+=word[i]
+
 
 
 #print(guess_word)
@@ -36,13 +45,13 @@ print('Hi... Friend.. Welcome to the Word guess game....')
 print('Lets Begine.....Best of luck...')
 print('Hints: \n The Word length is: ',lnth,'\n The word structure is :',guess_word)
 print('You have 3 chances to guess...')
-print(word)
+#print(word)
 
 for i in range(3):
     user_word = input('PLEASE ENTER YOUR WORD :')
-    print (user_word)
-    if word == user_word:
-        print('Congrats....your guess is correct....GUESS WORD=', word)
+
+    if org_word == user_word:
+        print('Congrats....your guess is correct....')
         break
     else:
         if i == 2:
@@ -52,7 +61,7 @@ for i in range(3):
 
             chk_word=input('Do you want to see the Actual Word ? Y/N :')
             if chk_word=='Y' or chk_word=='y':
-                print ('The actual no is : ',word)
+                print ('The actual word is : ',org_word)
             else:
                 print('Thank u...')
 
